@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación XV Años - Victoria Márquez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rosa: #f9c5d5;
+      --rosa-oscura: #f093ac;
+      --peach: #f6d8c9;
+      --lila: #d9c7f3;
+      --blanco: #ffffff;
+      --negro: #2d1c2a;
+      --glass-bg: rgba(255, 255, 255, 0.55);
+    }
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--negro);
+      background: radial-gradient(circle at top, rgba(249,197,213,0.45), transparent 60%),
+                  linear-gradient(180deg, #fff1f6 0%, #fef4f9 50%, #f4ecff 100%);
+      position: relative;
+      overflow-x: hidden;
+    }
+    p a {
+      color: var(--rosa-oscura);
+      font-weight: 500;
+      text-decoration: underline;
+    }
+    p a:hover {
+      text-decoration: none;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.04em;
+      color: var(--negro);
+    }
+    header {
+      --parallax: 0px;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--blanco);
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(45,28,42,0.65) 0%, rgba(45,28,42,0.45) 40%, rgba(45,28,42,0.75) 100%),
+                  url('https://i.imgur.com/OKvpFcy.jpg') center/cover no-repeat;
+      transform: translate3d(0, var(--parallax, 0px), 0) scale(1.05);
+      will-change: transform;
+      transition: transform 0.2s ease-out;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.22), transparent 55%),
+                  radial-gradient(circle at 80% 30%, rgba(255,255,255,0.18), transparent 60%),
+                  radial-gradient(circle at 60% 80%, rgba(240,147,172,0.12), transparent 65%);
+      opacity: 0.6;
+      mix-blend-mode: screen;
+    }
+    header .content {
+      position: relative;
+      padding: 3rem 1.5rem;
+      max-width: 650px;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: 0 30px 80px rgba(45,28,42,0.45);
+      animation: floatCard 12s ease-in-out infinite;
+    }
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0) translateZ(0); }
+      50% { transform: translateY(-12px) translateZ(0); }
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      margin-bottom: 0.5rem;
+    }
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+    }
+    .hero-date {
+      font-size: 1.2rem;
+      font-weight: 500;
+      background: rgba(255,255,255,0.25);
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      letter-spacing: 0.1em;
+    }
+    .floating-blobs span {
+      position: absolute;
+      width: clamp(160px, 18vw, 260px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(249,197,213,0));
+      filter: blur(0px);
+      opacity: 0.4;
+      animation: blobFloat 18s ease-in-out infinite;
+    }
+    .floating-blobs span:nth-child(2) {
+      top: 10%;
+      left: 10%;
+      animation-delay: -4s;
+    }
+    .floating-blobs span:nth-child(3) {
+      bottom: 5%;
+      right: 10%;
+      animation-delay: -8s;
+    }
+    .floating-blobs span:nth-child(4) {
+      top: 30%;
+      right: 25%;
+      animation-delay: -12s;
+    }
+    @keyframes blobFloat {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(-20px, -30px, 0) scale(1.08); }
+    }
+    @keyframes titleGlow {
+      0% { text-shadow: 0 15px 35px rgba(240,147,172,0); letter-spacing: 0.04em; opacity: 0.7; }
+      100% { text-shadow: 0 18px 40px rgba(240,147,172,0.35); letter-spacing: 0.08em; opacity: 1; }
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 25px 35px rgba(240,147,172,0.25); }
+      50% { box-shadow: 0 28px 45px rgba(240,147,172,0.4); }
+    }
+    @keyframes softDrift {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-8px) scale(1.03); }
+    }
+    @keyframes photoFloat {
+      0% { opacity: 0; transform: translateY(18px) scale(0.96); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      mix-blend-mode: difference;
+      color: white;
+      pointer-events: none;
+    }
+    nav .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+    }
+    nav a {
+      color: inherit;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.9rem;
+      pointer-events: auto;
+    }
+    section {
+      position: relative;
+      padding: clamp(4rem, 6vw, 6rem) clamp(1.5rem, 8vw, 8rem);
+      overflow: hidden;
+    }
+    section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% 10%, rgba(240,147,172,0.15), transparent 55%),
+                  radial-gradient(circle at 90% 20%, rgba(217,199,243,0.18), transparent 60%),
+                  linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    section > * {
+      position: relative;
+      z-index: 1;
+    }
+    .section-title {
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 2rem;
+    }
+    .section-title.visible {
+      animation: titleGlow 1.2s ease forwards;
+    }
+    .glass-card {
+      background: var(--glass-bg);
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: 0 20px 45px rgba(122, 72, 104, 0.15);
+      border: 1px solid rgba(255,255,255,0.4);
+      backdrop-filter: blur(12px);
+    }
+    .intro {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .intro img {
+      width: 100%;
+      border-radius: 28px;
+      box-shadow: 0 30px 50px rgba(122, 72, 104, 0.2);
+    }
+    .intro .text {
+      background: linear-gradient(140deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));
+      padding: 2rem;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+    }
+    .intro h3 {
+      font-size: 1.7rem;
+      margin-top: 0;
+    }
+    .countdown {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .countdown .time-box {
+      min-width: 120px;
+      padding: 1.5rem 1rem;
+      background: linear-gradient(160deg, rgba(240,147,172,0.7), rgba(217,199,243,0.6));
+      color: var(--blanco);
+      border-radius: 24px;
+      box-shadow: 0 25px 35px rgba(240,147,172,0.25);
+      position: relative;
+      overflow: hidden;
+      animation: glowPulse 7s ease-in-out infinite;
+    }
+    .countdown span {
+      display: block;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    .itinerary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .itinerary .item {
+      position: relative;
+      padding-left: 3.5rem;
+    }
+    .itinerary .item::before {
+      content: "";
+      position: absolute;
+      left: 1rem;
+      top: 0.5rem;
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f093ac, #d9c7f3);
+      box-shadow: 0 0 0 6px rgba(240,147,172,0.25);
+    }
+    .itinerary .time {
+      font-weight: 600;
+      color: var(--rosa-oscura);
+    }
+    .venues {
+      display: grid;
+      gap: 3rem;
+    }
+    .venue-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+    .scroll-photos {
+      display: flex;
+      gap: 1.2rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+    }
+    .scroll-photos::-webkit-scrollbar {
+      height: 6px;
+    }
+    .scroll-photos::-webkit-scrollbar-thumb {
+      background: rgba(240,147,172,0.5);
+      border-radius: 999px;
+    }
+    .scroll-photos img {
+      height: 200px;
+      border-radius: 22px;
+      object-fit: cover;
+      scroll-snap-align: center;
+      box-shadow: 0 20px 40px rgba(122, 72, 104, 0.22);
+      animation: softDrift 12s ease-in-out infinite;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+    }
+    .gallery-grid.reveal.visible img {
+      opacity: 0;
+      animation: photoFloat 0.9s ease forwards;
+    }
+    .gallery-grid.reveal.visible img:nth-child(2) { animation-delay: 0.05s; }
+    .gallery-grid.reveal.visible img:nth-child(3) { animation-delay: 0.1s; }
+    .gallery-grid.reveal.visible img:nth-child(4) { animation-delay: 0.15s; }
+    .gallery-grid.reveal.visible img:nth-child(5) { animation-delay: 0.2s; }
+    .gallery-grid.reveal.visible img:nth-child(6) { animation-delay: 0.25s; }
+    .gallery-grid.reveal.visible img:nth-child(7) { animation-delay: 0.3s; }
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 18px 30px rgba(122, 72, 104, 0.18);
+    }
+    .gallery-grid img:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 28px 45px rgba(122, 72, 104, 0.25);
+    }
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(45,28,42,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 2rem;
+    }
+    .modal img {
+      max-width: min(90vw, 900px);
+      max-height: 80vh;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+    }
+    .modal.active {
+      display: flex;
+    }
+    .calendar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #f093ac, #d9c7f3);
+      color: var(--blanco);
+      padding: 0.85rem 1.7rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 18px 35px rgba(240,147,172,0.25);
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 25px 45px rgba(240,147,172,0.35);
+    }
+    .gift-table {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .gift-table .card {
+      padding: 1.8rem;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.65);
+      box-shadow: 0 20px 40px rgba(122,72,104,0.18);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .music-toggle {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 1200;
+      background: linear-gradient(135deg, rgba(240,147,172,0.9), rgba(217,199,243,0.9));
+      color: var(--blanco);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 18px 30px rgba(240,147,172,0.35);
+    }
+    .petal {
+      position: fixed;
+      top: -10vh;
+      width: 18px;
+      height: 28px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(249,197,213,0.6));
+      border-radius: 50% 50% 40% 40%;
+      opacity: 0.75;
+      animation: fall 12s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    @keyframes fall {
+      0% { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.75; }
+      50% { transform: translate3d(10vw, 50vh, 0) rotate(180deg); }
+      100% { transform: translate3d(-10vw, 110vh, 0) rotate(360deg); opacity: 0; }
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      font-size: 0.85rem;
+      color: rgba(45,28,42,0.65);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem;
+      }
+      nav .links {
+        display: none;
+      }
+      header .content {
+        margin: 4rem 1.5rem;
+      }
+      .scroll-photos img {
+        height: 160px;
+      }
+      .intro .text {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="brand">Victoria · XV</div>
+    <div class="links">
+      <a href="#intro">Inicio</a>
+      <a href="#countdown">Cuenta regresiva</a>
+      <a href="#itinerario">Itinerario</a>
+      <a href="#lugares">Lugares</a>
+      <a href="#galeria">Galería</a>
+      <a href="#rsvp">RSVP</a>
+    </div>
+  </nav>
+
+  <header id="portada">
+    <div class="floating-blobs" aria-hidden="true">
+      <span style="top:15%;right:15%;"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="content">
+      <p class="hero-subtitle">Mis Quince Años</p>
+      <h1 class="hero-title">Victoria Márquez</h1>
+      <p class="hero-date">29 · Noviembre · 2025</p>
+      <p>Con inmensa alegría te invito a celebrar conmigo en Río Verde, San Luis Potosí; será una noche llena de magia, sonrisas y recuerdos eternos.</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2 class="section-title reveal">Con Cariño</h2>
+      <div class="intro">
+        <img src="https://i.imgur.com/JTC7g9h.jpg" alt="Foto de Victoria" class="reveal" loading="lazy">
+        <div class="text reveal">
+          <h3>Querida familia y amigos</h3>
+          <p>Gracias por acompañarme en este camino, por cada consejo, abrazo y risa compartida. Hoy celebro no solo mis quince, sino también el amor de quienes han sido parte de mi historia.</p>
+          <p><strong>Mis padres:</strong> Alfonso Sandoval Hernández &amp; Ma. Samantha Márquez Agundiz</p>
+          <p><strong>Padrinos:</strong> Miguel Ángel Martínez Ruiz &amp; Ada Noemí Márquez Agundiz</p>
+          <p>Les espero con el corazón lleno de ilusión para vivir juntos un atardecer inolvidable en la Huasteca Potosina.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="countdown">
+      <h2 class="section-title reveal">Cuenta regresiva para la gran noche</h2>
+      <div class="countdown reveal">
+        <div class="time-box">
+          <span id="days">00</span>
+          Días
+        </div>
+        <div class="time-box">
+          <span id="hours">00</span>
+          Horas
+        </div>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          Minutos
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          Segundos
+        </div>
+      </div>
+    </section>
+
+    <section id="itinerario">
+      <h2 class="section-title reveal">Itinerario de celebración</h2>
+      <div class="itinerary">
+        <div class="glass-card item reveal">
+          <h3 class="time">5:00 p.m.</h3>
+          <h4>Misa de acción de gracias</h4>
+          <p>Parroquia del Puente del Carmen. <a href="https://maps.app.goo.gl/kwdxs3LXMpD7mk2U8" target="_blank" rel="noopener noreferrer nofollow">Ver mapa</a></p>
+        </div>
+        <div class="glass-card item reveal">
+          <h3 class="time">6:00 p.m.</h3>
+          <h4>Recepción en familia</h4>
+          <p>Finca María Luisa. <a href="https://maps.app.goo.gl/dmNyhGiQqDasvqvh6" target="_blank" rel="noopener noreferrer nofollow">Cómo llegar</a></p>
+        </div>
+        <div class="glass-card item reveal">
+          <h3 class="time">6:30 p.m.</h3>
+          <h4>Entrada de la quinceañera</h4>
+          <p>Un momento especial para compartir palabras, abrazos y promesas de nuevos sueños.</p>
+        </div>
+        <div class="glass-card item reveal">
+          <h3 class="time">7:00 p.m.</h3>
+          <h4>Banquete</h4>
+          <p>Disfrutemos juntos de una cena cuidadosamente preparada para celebrar este día único.</p>
+        </div>
+        <div class="glass-card item reveal">
+          <h3 class="time">9:00 p.m.</h3>
+          <h4>Todos a la pista</h4>
+          <p>La fiesta continúa con música, sorpresas y mucha alegría hasta que el cuerpo aguante.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="lugares">
+      <h2 class="section-title reveal">Nuestros lugares especiales</h2>
+      <div class="venues">
+        <div class="venue-card">
+          <div class="glass-card reveal">
+            <h3>Iglesia</h3>
+            <p><strong>Parroquia del Puente del Carmen</strong></p>
+            <p>Centro histórico de Río Verde, San Luis Potosí. Acompáñame a dar gracias por esta nueva etapa.</p>
+            <a class="btn" href="https://maps.app.goo.gl/kwdxs3LXMpD7mk2U8" target="_blank" rel="noopener noreferrer nofollow">Ver mapa</a>
+          </div>
+          <div class="scroll-photos reveal">
+            <img src="https://i.imgur.com/u29o3fF.png" alt="Fachada de la parroquia" loading="lazy">
+          </div>
+        </div>
+        <div class="venue-card">
+          <div class="scroll-photos reveal">
+            <img src="https://i.imgur.com/ajijkmQ.png" alt="Vista aérea de la finca" loading="lazy">
+          </div>
+          <div class="glass-card reveal">
+            <h3>Recepción</h3>
+            <p><strong>Finca María Luisa</strong></p>
+            <p>Camino a la Media Luna, Río Verde, San Luis Potosí. Un escenario lleno de naturaleza para celebrar.</p>
+            <a class="btn" href="https://maps.app.goo.gl/dmNyhGiQqDasvqvh6" target="_blank" rel="noopener noreferrer nofollow">Ver mapa</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <h2 class="section-title reveal">Recuerdos que atesoro</h2>
+      <div class="gallery-grid reveal">
+        <img src="https://i.imgur.com/OKvpFcy.jpg" alt="Sesión en el jardín" loading="lazy">
+        <img src="https://i.imgur.com/JTC7g9h.jpg" alt="Retrato principal" loading="lazy">
+        <img src="https://i.imgur.com/9YfRwzQ.jpg" alt="Detalles en tonos malva" loading="lazy">
+        <img src="https://i.imgur.com/cDtYRdb.jpg" alt="Bouquet romántico" loading="lazy">
+        <img src="https://i.imgur.com/1ihXiL6.jpg" alt="Instante entre luces" loading="lazy">
+        <img src="https://i.imgur.com/XS5HDRD.jpg" alt="Ambientación en la finca" loading="lazy">
+        <img src="https://i.imgur.com/j36yRb4.jpg" alt="Mesa de dulces" loading="lazy">
+      </div>
+    </section>
+
+    <section id="calendario">
+      <h2 class="section-title reveal">Agenda la fecha</h2>
+      <div class="glass-card reveal">
+        <p>Guarda el gran día y no te pierdas ningún detalle. Puedes añadirlo a tu Google Calendar o descargar el archivo .ics.</p>
+        <div class="calendar-actions">
+          <a class="btn" id="google-calendar" target="_blank" rel="noopener">Google Calendar</a>
+          <button class="btn" id="ics-btn" type="button">Descargar .ICS</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="mesa">
+      <h2 class="section-title reveal">Mesa de regalos</h2>
+      <div class="gift-table">
+        <div class="card reveal">
+          <h3>LLuvia de sobres</h3>
+          <p>Si deseas obsequiarme un detalle especial, agradezco tu cariño en la lluvia de sobres durante la recepción.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Lista de deseos</h3>
+          <p>También puedes elegir un regalo significativo en mi lista virtual cuidadosamente seleccionada.</p>
+          <a class="btn" href="https://www.amazon.com.mx" target="_blank" rel="noopener">Ver lista</a>
+        </div>
+        <div class="card reveal">
+          <h3>Notas especiales</h3>
+          <p>Para resaltar la paleta de colores elegida, te pido con cariño evitar vestir en tonos rosa o dorado. ¡Tu estilo y sonrisa serán el mejor regalo!</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="rsvp">
+      <h2 class="section-title reveal">Confirma tu asistencia</h2>
+      <div class="glass-card reveal" style="text-align:center;">
+        <p>Tu presencia hará de esta noche un recuerdo inolvidable. Por favor confirma antes del 10 de noviembre con Samantha al <strong>487 146 2596</strong>.</p>
+        <a class="btn" href="https://wa.me/524871462596?text=Hola%20Victoria%2C%20confirmo%20mi%20asistencia%20para%20el%2029%20de%20noviembre%20en%20R%C3%ADo%20Verde" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Victoria Márquez
+  </footer>
+
+  <button class="music-toggle" id="music-toggle" aria-label="Reproducir música">&#127925;</button>
+  <audio id="bg-music" preload="auto" loop>
+    <source src="https://docs.google.com/uc?export=download&id=1HzIVwMKfQOfH7OxNfNL_arEGuiy4Uf0N" type="audio/mpeg">
+  </audio>
+
+  <div class="modal" id="modal">
+    <img src="" alt="Imagen ampliada" id="modal-img">
+  </div>
+
+  <script>
+    const hero = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      hero.style.setProperty('--parallax', `${y * 0.25}px`);
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const eventDate = new Date('2025-11-29T17:00:00-06:00');
+    function updateCountdown() {
+      const now = new Date();
+      const diff = eventDate - now;
+      if (diff <= 0) {
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    document.querySelectorAll('.gallery-grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    modal.addEventListener('click', () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    const googleLink = document.getElementById('google-calendar');
+    const gEvent = {
+      text: 'XV Años de Victoria Márquez',
+      dates: '20251129T230000Z/20251130T050000Z',
+      details: 'Celebremos juntos los quince años de Victoria. Ceremonia en Parroquia del Puente del Carmen y recepción en Finca María Luisa, Río Verde, SLP.',
+      location: 'Parroquia del Puente del Carmen, Río Verde, San Luis Potosí'
+    };
+    googleLink.href = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(gEvent.text)}&dates=${gEvent.dates}&details=${encodeURIComponent(gEvent.details)}&location=${encodeURIComponent(gEvent.location)}`;
+
+    document.getElementById('ics-btn').addEventListener('click', () => {
+      const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z\nDTSTART:20251129T230000Z\nDTEND:20251130T050000Z\nSUMMARY:XV Años de Victoria Márquez\nDESCRIPTION:Celebremos juntos los quince años de Victoria. Ceremonia en Parroquia del Puente del Carmen y recepción en Finca María Luisa, Río Verde, SLP.\nLOCATION:Parroquia del Puente del Carmen, Río Verde, San Luis Potosí\nEND:VEVENT\nEND:VCALENDAR`;
+      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'XV_Victoria_Marquez.ics';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    });
+
+    const music = document.getElementById('bg-music');
+    const toggle = document.getElementById('music-toggle');
+    let isPlaying = false;
+    let fadeInterval;
+    music.volume = 0;
+
+    function fadeVolume(target) {
+      clearInterval(fadeInterval);
+      fadeInterval = setInterval(() => {
+        const step = 0.05;
+        if (music.volume < target && target > 0) {
+          music.volume = Math.min(music.volume + step, target);
+        } else if (music.volume > target) {
+          music.volume = Math.max(music.volume - step, target);
+        }
+        if (Math.abs(music.volume - target) < 0.01) {
+          music.volume = target;
+          clearInterval(fadeInterval);
+        }
+      }, 200);
+    }
+
+    async function playMusic(auto = false) {
+      if (isPlaying) return;
+      try {
+        await music.play();
+        fadeVolume(0.9);
+        toggle.innerHTML = '&#10074;&#10074;';
+        toggle.setAttribute('aria-label', 'Pausar música');
+        isPlaying = true;
+      } catch (err) {
+        if (!auto) {
+          console.log('No se pudo reproducir la música:', err);
+        }
+      }
+    }
+
+    function pauseMusic() {
+      if (!isPlaying) return;
+      fadeVolume(0);
+      setTimeout(() => {
+        music.pause();
+      }, 1200);
+      toggle.innerHTML = '&#127925;';
+      toggle.setAttribute('aria-label', 'Reproducir música');
+      isPlaying = false;
+    }
+
+    toggle.addEventListener('click', () => {
+      if (!isPlaying) {
+        playMusic();
+      } else {
+        pauseMusic();
+      }
+    });
+
+    async function attemptAutoPlay() {
+      await playMusic(true);
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        attemptAutoPlay();
+      }, 600);
+    });
+
+    ['pointerdown', 'touchstart', 'click'].forEach(evt => {
+      const handler = async () => {
+        if (!isPlaying) {
+          await attemptAutoPlay();
+        }
+        if (isPlaying) {
+          document.removeEventListener(evt, handler);
+        }
+      };
+      document.addEventListener(evt, handler);
+    });
+
+    function createPetals(count) {
+      for (let i = 0; i < count; i++) {
+        const petal = document.createElement('span');
+        petal.className = 'petal';
+        const delay = Math.random() * -20;
+        const duration = 10 + Math.random() * 10;
+        const left = Math.random() * 100;
+        petal.style.left = left + 'vw';
+        petal.style.animationDelay = delay + 's';
+        petal.style.animationDuration = duration + 's';
+        petal.style.opacity = 0.45 + Math.random() * 0.4;
+        document.body.appendChild(petal);
+      }
+    }
+    createPetals(24);
+  </script>
+</body>
+</html>
